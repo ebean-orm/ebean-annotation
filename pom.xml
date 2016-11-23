@@ -2,33 +2,34 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.avaje.ebean</groupId>
-    <artifactId>ebean-annotation</artifactId>
-    <version>1.1-SNAPSHOT</version>
+  <groupId>org.avaje.ebean</groupId>
+  <artifactId>ebean-annotation</artifactId>
+  <version>1.1-SNAPSHOT</version>
 
-    <parent>
-        <groupId>org.avaje</groupId>
-        <artifactId>java8-parent</artifactId>
-        <version>1.1</version>
-    </parent>
+  <parent>
+    <groupId>org.avaje</groupId>
+    <artifactId>java8-parent</artifactId>
+    <version>1.3</version>
+  </parent>
 
-    <scm>
-        <developerConnection>scm:git:git@github.com:ebean-orm/ebean-annotation.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
+  <scm>
+    <developerConnection>scm:git:git@github.com:ebean-orm/ebean-annotation.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
 
-    <dependencies>
+  <dependencies>
 
-        <!-- provided scope for EbeanDDL validation group marker -->
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>1.0.0.GA</version>
-            <scope>provided</scope>
-        </dependency>
+    <!-- provided scope for EbeanDDL validation group marker -->
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>1.0.0.GA</version>
+      <scope>provided</scope>
+    </dependency>
 
-    </dependencies>
+  </dependencies>
 
 </project>
+
