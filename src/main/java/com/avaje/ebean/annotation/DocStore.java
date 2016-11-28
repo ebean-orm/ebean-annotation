@@ -28,6 +28,16 @@ public @interface DocStore {
   String indexType() default "";
 
   /**
+   * Set to false to disable the "_all" index.
+   */
+  boolean enableAll() default true;
+
+  /**
+   * Set the refresh interval for the index.
+   */
+  String refreshInterval() default "";
+
+  /**
    * The number of shards this index should use.
    */
   int shards() default 0;
