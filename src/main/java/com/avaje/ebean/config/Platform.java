@@ -11,9 +11,19 @@ public enum Platform {
   GENERIC,
 
   /**
+   * DB2.
+   */
+  DB2,
+
+  /**
    * H2.
    */
   H2,
+
+  /**
+   * HsqlDB.
+   */
+  HSQLDB,
 
   /**
    * Postgres.
@@ -31,17 +41,18 @@ public enum Platform {
   ORACLE,
 
   /**
-   * Microsoft SQL Server.
+   * SQLAnywhere.
    */
-  SQLSERVER,
-
-  /**
-   * DB2.
-   */
-  DB2,
+  SQLANYWHERE,
 
   /**
    * SQLite.
    */
-  SQLITE
+  SQLITE,
+
+  /**
+   * Microsoft SQL Server.
+   */
+  SQLSERVER;
+
 }
