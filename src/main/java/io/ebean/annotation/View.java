@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotate an entity bean with @View to indicates the bean is based on a view.
+ * Annotate an entity bean with &#64;View to indicates the bean is based on a view.
  * <p>
  * As such typically the view is defined in <code>extra-ddl.xml</code> using
  * <code>create or replace view ...</code>.

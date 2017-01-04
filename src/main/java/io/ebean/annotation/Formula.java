@@ -65,7 +65,7 @@ import java.lang.annotation.Target;
  *
  * }</pre>
  */
-@Target({ElementType.FIELD, ElementType.METHOD, ElementType.TYPE})
+@Target({ElementType.FIELD, ElementType.METHOD, ElementType.TYPE, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Repeatable(Formula.List.class)
 public @interface Formula {
