@@ -4,12 +4,12 @@ package io.ebean;
  * Used to define the transactional scope for executing a method. Matches the
  * types defined in the EJB TransactionAttributeType.
  * <p>
- * Used with the Transactional annotation and the {@link TxScope} with
- * {@link Ebean#execute(TxScope, TxCallable)} and
- * {@link Ebean#execute(TxScope, TxRunnable)}.
+ * Used with the Transactional annotation and TxScope with
+ * <ul>
+ *   <li>Ebean execute(TxScope, Runnable)</li>
+ *   <li>Ebean executeCall(TxScope, Callable)</li>
+ * </ul>
  * </p>
- *
- * @see TxScope
  */
 public enum TxType {
 
