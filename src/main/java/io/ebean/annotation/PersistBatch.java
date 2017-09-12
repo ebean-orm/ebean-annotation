@@ -1,4 +1,4 @@
-package io.ebean;
+package io.ebean.annotation;
 
 /**
  * Defines the mode for JDBC batch processing.

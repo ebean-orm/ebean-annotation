@@ -1,4 +1,4 @@
-package io.ebean;
+package io.ebean.annotation;
 
 /**
  * Built in supported platforms.

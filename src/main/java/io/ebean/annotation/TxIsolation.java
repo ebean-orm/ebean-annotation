@@ -1,4 +1,4 @@
-package io.ebean;
+package io.ebean.annotation;
 
 import java.sql.Connection;
 
@@ -12,8 +12,6 @@ import java.sql.Connection;
  * This can be used with TxScope to define transactional scopes to execute
  * method within.
  * </p>
- *
- * @see TxScope
  */
 public enum TxIsolation {
 

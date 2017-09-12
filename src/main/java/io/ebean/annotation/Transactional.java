@@ -1,9 +1,5 @@
 package io.ebean.annotation;
 
-import io.ebean.PersistBatch;
-import io.ebean.TxIsolation;
-import io.ebean.TxType;
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -109,6 +105,11 @@ public @interface Transactional {
    * </p>
    */
   TxIsolation isolation() default TxIsolation.DEFAULT;
+
+  /**
+   * Set this to false if the JDBC batch should not be automatically flushed when a query is executed.
+   */
+  boolean flushOnQuery() default true;
 
   /**
    * Set this to true if the transaction should be only contain queries.

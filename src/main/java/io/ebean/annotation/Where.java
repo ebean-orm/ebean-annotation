@@ -1,7 +1,5 @@
 package io.ebean.annotation;
 
-import io.ebean.Platform;
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;

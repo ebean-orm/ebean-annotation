@@ -1,4 +1,4 @@
-package io.ebean;
+package io.ebean.annotation;
 
 /**
  * Used to define the transactional scope for executing a method. Matches the
