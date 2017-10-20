@@ -136,4 +136,14 @@ public @interface Transactional {
    */
   Class<? extends Throwable>[] noRollbackFor() default {};
 
+  /**
+   * A key used to identify a specific transaction for profiling purposes.
+   * <p>
+   * If set to -1 this means there should be no profiling on this transaction.
+   * </p>
+   * <p>
+   * If not set (left at 0) this means the profilingId can be automatically set during transactional enhancement.
+   * </p>
+   */
+  int profileId() default 0;
 }
