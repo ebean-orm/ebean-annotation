@@ -116,14 +116,6 @@ public @interface Transactional {
    */
   boolean readOnly() default false;
 
-  /**
-   * The name of the server that you want the transaction to be created from.
-   * <p>
-   * If left blank the 'default' server is used.
-   * </p>
-   */
-  String serverName() default "";
-
   // int timeout() default 0;
 
   /**
