@@ -30,20 +30,20 @@ public @interface Cache {
    * </p>
    * <p>
    * When bean caching is enabled by default "find by id" and "find by unique natural key"
-   * queries will try to use the bean cache. We use {@link com.avaje.ebean.Query#setUseCache(boolean)}
+   * queries will try to use the bean cache. We use Query.setUseCache(boolean)
    * with <code>false</code> for the case when we do NOT want to use the bean cache.
    * </p>
    */
   boolean enableBeanCache() default true;
 
   /**
-   * Specify the property that is a natural unique identifier for the bean.
+   * Specify the properties that is a natural unique identifier for the bean.
    * <p>
-   * When a findUnique() query is used with this property as the sole expression
+   * When a findOne() query is used with this property as the sole expression
    * then there will be a lookup into the L2 natural key cache.
    * </p>
    */
-  String naturalKey() default "";
+  String[] naturalKey() default {};
 
   /**
    * When set to true the beans returned from a query will default to be
