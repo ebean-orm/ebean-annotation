@@ -119,6 +119,16 @@ public @interface Transactional {
   // int timeout() default 0;
 
   /**
+   * Set this to true such that the L2 cache is not used by queries that otherwise would.
+   */
+  boolean skipCache() default false;
+
+  /**
+   * Set a label to identify the transaction in performance metrics and logging.
+   */
+  String label() default "";
+
+  /**
    * The Throwable's that will explicitly cause a rollback to occur.
    */
   Class<? extends Throwable>[] rollbackFor() default {};
