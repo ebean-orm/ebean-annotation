@@ -16,6 +16,11 @@ public enum Platform {
   DB2,
 
   /**
+   * CockroachDB.
+   */
+  COCKROACH,
+
+  /**
    * H2.
    */
   H2,
