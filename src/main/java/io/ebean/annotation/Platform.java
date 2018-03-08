@@ -56,17 +56,17 @@ public enum Platform {
   SQLITE,
 
   /**
-   * Microsoft SQL Server 2017 platform (Non UTF8 types and Identity).
+   * Microsoft SQL Server 2016 platform (Non UTF8 types and Identity by default).
+   */
+  SQLSERVER16,
+
+  /**
+   * Microsoft SQL Server 2017 platform (UTF8 types and Sequence).
    */
   SQLSERVER17,
 
   /**
-   * Microsoft SQL Server 2018 platform (UTF8 types and Sequence).
-   */
-  SQLSERVER18,
-
-  /**
-   * Microsoft SQL Server (preferred platform 2018).
+   * Microsoft SQL Server (preferred platform 2017).
    */
   SQLSERVER;
 
