@@ -68,6 +68,11 @@ public enum Platform {
   /**
    * Microsoft SQL Server (preferred platform 2017).
    */
-  SQLSERVER;
+  SQLSERVER,
+  
+  /**
+   * SAP HANA
+   */
+  HANA;
 
 }
