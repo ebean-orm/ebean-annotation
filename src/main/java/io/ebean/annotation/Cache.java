@@ -13,6 +13,23 @@ import java.lang.annotation.Target;
 public @interface Cache {
 
   /**
+   * If set to true additionally use a near cache (for Redis and similar L2 cache options).
+   * <p>
+   * This does not apply to query caches (as they are always near caches) but applies to
+   * the bean caching (bean cache, natural key cache and collection ids cache).
+   * </p>
+   * <p>
+   * Near caches are fast in that they are in local memory avoid going over the network to the
+   * remote cache with the downside of using more local memory and increasing the cache invalidation
+   * costs for updates and deletes (as cache invalidations need to propagate with near caching turned on).
+   * </p>
+   * <p>
+   * Near caching is best with relatively many reads to few writes.
+   * </p>
+   */
+  boolean nearCache() default false;
+
+  /**
    * Set this to true to enable the use of query cache.
    * <p>
    * By default query caching is disabled as the query cache invalidates
