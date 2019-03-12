@@ -41,4 +41,14 @@ public @interface DbEnumValue {
    */
   DbEnumType storage() default DbEnumType.VARCHAR;
 
+  /**
+   * The column length for VARCHAR.
+   * <p>
+   * When 0 the length is determined automatically based on the maximum length of the values used.
+   * <p>
+   * Specify this to allow for future string enum values that might be larger then the automatically
+   * determined maximum length.
+   */
+  int length() default 0;
+
 }
