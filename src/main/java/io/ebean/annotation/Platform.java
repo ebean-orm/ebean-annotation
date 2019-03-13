@@ -21,6 +21,11 @@ public enum Platform {
   COCKROACH,
 
   /**
+   * ClickHouse.
+   */
+  CLICKHOUSE,
+
+  /**
    * H2.
    */
   H2,
@@ -69,7 +74,7 @@ public enum Platform {
    * Microsoft SQL Server (preferred platform 2017).
    */
   SQLSERVER,
-  
+
   /**
    * SAP HANA
    */
