@@ -75,4 +75,19 @@ public @interface Cache {
    */
   boolean readOnly() default false;
 
+  /**
+   * Specify a named cache region.
+   * <p>
+   * Regions can be turned on and off dynamically at runtime.
+   * </p>
+   * <p>
+   * Depending on the cache implementation a region can potentially have different
+   * deployment targets - for example, with the Ebean redis cache a region could be
+   * configured to use a different redis server.
+   * </p>
+   * <p>
+   * The "default" region is called <code>r0</code>.
+   * </p>
+   */
+  String region() default "r0";
 }
