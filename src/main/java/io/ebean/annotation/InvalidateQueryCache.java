@@ -27,4 +27,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface InvalidateQueryCache {
 
+  /**
+   * Specify a named cache region.
+   * <p>
+   * The "default" region is called <code>r0</code>.
+   * </p>
+   */
+  String region() default "r0";
 }
