@@ -46,6 +46,11 @@ public enum Platform {
   MYSQL,
 
   /**
+   * NuoDB.
+   */
+  NUODB,
+
+  /**
    * Oracle.
    */
   ORACLE,
