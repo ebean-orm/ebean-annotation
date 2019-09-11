@@ -41,6 +41,11 @@ public enum Platform {
   POSTGRES,
 
   /**
+   * MySql 5.5.
+   */
+  MYSQL55,
+
+  /**
    * MySql.
    */
   MYSQL,
