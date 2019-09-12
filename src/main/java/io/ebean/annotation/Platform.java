@@ -6,7 +6,7 @@ package io.ebean.annotation;
 public enum Platform {
 
   /**
-   * Generic base platform configured via properties or code.
+   * Generic platform configured via properties or code.
    */
   GENERIC,
 
@@ -41,14 +41,14 @@ public enum Platform {
   POSTGRES,
 
   /**
-   * MySql 5.5.
-   */
-  MYSQL55,
-
-  /**
    * MySql.
    */
   MYSQL,
+
+  /**
+   * MySql 5.5.
+   */
+  MYSQL55(MYSQL),
 
   /**
    * NuoDB.
@@ -71,23 +71,39 @@ public enum Platform {
   SQLITE,
 
   /**
+   * Microsoft SQL Server (preferred platform 2017).
+   */
+  SQLSERVER,
+
+  /**
    * Microsoft SQL Server 2016 platform (Non UTF8 types and Identity by default).
    */
-  SQLSERVER16,
+  SQLSERVER16(SQLSERVER),
 
   /**
    * Microsoft SQL Server 2017 platform (UTF8 types and Sequence).
    */
-  SQLSERVER17,
-
-  /**
-   * Microsoft SQL Server (preferred platform 2017).
-   */
-  SQLSERVER,
+  SQLSERVER17(SQLSERVER),
 
   /**
    * SAP HANA
    */
   HANA;
 
+  private Platform base;
+
+  Platform() {
+    this.base = this;
+  }
+
+  Platform(Platform base) {
+    this.base = base;
+  }
+
+  /**
+   * Return the base platform.
+   */
+  public Platform base() {
+    return base;
+  }
 }
