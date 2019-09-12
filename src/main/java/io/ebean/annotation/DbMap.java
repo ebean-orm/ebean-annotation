@@ -21,7 +21,7 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface DbHstore {
+public @interface DbMap {
 
   /**
    * For VARCHAR storage specify the column length (defaults to 1000).
