@@ -6,27 +6,27 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Specify a property to be an SUM aggregation.
+ * Specify a property to be an MIN aggregation.
  * <p>
- * <code>@Sum</code> is short hand for <code>@Aggregation("sum(...propertyName...)")</code>
+ * <code>@Min</code> is short hand for <code>@Aggregation("min(...propertyName...)")</code>
  * </p>
  *
  * <h3>Example:</h3>
  * <pre>{@code
  *
- * @Sum
+ * @Min
  * BigDecimal distance;
  *
  * // is the same as:
  *
- * @Aggregation("sum(distance)")
+ * @Aggregation("min(distance)")
  * BigDecimal distance;
  *
  * }</pre>
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-@Aggregation("sum($1)")
-public @interface Sum {
+@Aggregation("min($1)")
+public @interface Min {
 
 }

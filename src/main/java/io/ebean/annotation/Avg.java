@@ -6,27 +6,27 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Specify a property to be an SUM aggregation.
+ * Specify a property to be an AVG aggregation.
  * <p>
- * <code>@Sum</code> is short hand for <code>@Aggregation("sum(...propertyName...)")</code>
+ * <code>@Avg</code> is short hand for <code>@Aggregation("avg(...propertyName...)")</code>
  * </p>
  *
  * <h3>Example:</h3>
  * <pre>{@code
  *
- * @Sum
+ * @Avg
  * BigDecimal distance;
  *
  * // is the same as:
  *
- * @Aggregation("sum(distance)")
+ * @Aggregation("avg(distance)")
  * BigDecimal distance;
  *
  * }</pre>
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-@Aggregation("sum($1)")
-public @interface Sum {
+@Aggregation("avg($1)")
+public @interface Avg {
 
 }
