@@ -4,7 +4,7 @@
 
   <groupId>io.ebean</groupId>
   <artifactId>ebean-annotation</artifactId>
-  <version>6.2</version>
+  <version>6.3-SNAPSHOT</version>
 
   <parent>
     <groupId>org.avaje</groupId>
@@ -14,7 +14,7 @@
 
   <scm>
     <developerConnection>scm:git:git@github.com:ebean-orm/ebean-annotation.git</developerConnection>
-    <tag>ebean-annotation-6.2</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <dependencies>
