@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * Annotation to specify a default value for DDL-generation &amp; Migration.
  * This annotation is <b>EXPERIMENTAL</b> and may change.
- *
+ * 
  * @author Roland Praml, FOCONIS AG
  */
 @Retention(RetentionPolicy.RUNTIME)
