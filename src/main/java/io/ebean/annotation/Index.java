@@ -35,4 +35,16 @@ public @interface Index {
    */
   String[] columnNames() default {};
 
+  /**
+   * Platforms this index applies to - default is all platforms.
+   * <p>
+   * This provides an alternative to using extra-dll.xml to specify
+   * platform specific index ddl.
+   * <p>
+   * Changing platforms is NOT detected as part of DB migration
+   * generation (no platform specific DIFF) so using extra-ddl.xml
+   * may be preferred.
+   */
+  Platform[] platforms() default {};
+
 }
