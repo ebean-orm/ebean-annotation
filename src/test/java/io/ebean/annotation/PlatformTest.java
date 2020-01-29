@@ -11,6 +11,8 @@ public class PlatformTest {
   public void base() {
 
     assertThat(Platform.POSTGRES.base()).isSameAs(Platform.POSTGRES);
+    assertThat(Platform.POSTGRES9.base()).isSameAs(Platform.POSTGRES);
+    assertThat(Platform.POSTGRES10.base()).isSameAs(Platform.POSTGRES);
 
     assertThat(Platform.MYSQL.base()).isSameAs(Platform.MYSQL);
     assertThat(Platform.MYSQL55.base()).isSameAs(Platform.MYSQL);
