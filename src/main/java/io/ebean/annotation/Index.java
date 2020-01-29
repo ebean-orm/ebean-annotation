@@ -27,6 +27,14 @@ public @interface Index {
   boolean unique() default false;
 
   /**
+   * If set true with Postgres this index should be created concurrently.
+   * <p>
+   * This attribute currently only applies to Postgres applying to both the
+   * <code>create index</code> and <code>drop index</code> generated DDL.
+   */
+  boolean concurrent() default false;
+
+  /**
    * When placed on the class (rather than field) you can specify the columns
    * to include in the index in order.
    * <p>
@@ -46,5 +54,24 @@ public @interface Index {
    * may be preferred.
    */
   Platform[] platforms() default {};
+
+  /**
+   * The full raw SQL definition to create the index.
+   * <p>
+   * The indexName should be provided such that the drop index statement can
+   * be generated as needed.
+   * <p>
+   * This allows for platform specific index creation features as an alternative to using
+   * ebean extra-dll.xml to define extra potentially platform specific DDL.
+   *
+   * <pre>{@code
+   *
+   *   @Index(name = "ix_t_detail_defn",
+   *     definition = "create index ix_t_detail_defn on t_detail using hash (lower(name)) where lower(name) like 'r%'",
+   *     platforms = Platform.POSTGRES)
+   *
+   * }</pre>
+   */
+  String definition() default "";
 
 }
