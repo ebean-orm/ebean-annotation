@@ -36,7 +36,7 @@ public enum Platform {
   HSQLDB,
 
   /**
-   * Postgres (preferred platform POSTGRES10+).
+   * Postgres preferred platform for 11+.
    */
   POSTGRES,
 
@@ -66,14 +66,9 @@ public enum Platform {
   NUODB,
 
   /**
-   * Oracle (preferred ORACLE12+ platform).
+   * Oracle preferred platform 12c and higher.
    */
   ORACLE,
-
-  /**
-   * Oracle 12c or later platform.
-   */
-  ORACLE12(ORACLE),
 
   /**
    * Oracle 11 platform.
