@@ -66,9 +66,19 @@ public enum Platform {
   NUODB,
 
   /**
-   * Oracle.
+   * Oracle (preferred ORACLE12+ platform).
    */
   ORACLE,
+
+  /**
+   * Oracle 12c or later platform.
+   */
+  ORACLE12(ORACLE),
+
+  /**
+   * Oracle 11 platform.
+   */
+  ORACLE11(ORACLE),
 
   /**
    * SQLAnywhere.
