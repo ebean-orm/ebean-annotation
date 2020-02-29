@@ -36,7 +36,7 @@ public enum Platform {
   HSQLDB,
 
   /**
-   * Postgres preferred platform for 11+.
+   * Postgres preferred platform for 10+.
    */
   POSTGRES,
 
@@ -44,11 +44,6 @@ public enum Platform {
    * Postgres 9.
    */
   POSTGRES9(POSTGRES),
-
-  /**
-   * Postgres 10+.
-   */
-  POSTGRES10(POSTGRES),
 
   /**
    * MySql.
