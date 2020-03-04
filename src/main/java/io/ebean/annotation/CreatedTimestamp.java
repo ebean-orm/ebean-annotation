@@ -34,7 +34,7 @@ import java.lang.annotation.Target;
  * }</pre>
  */
 @Deprecated
-@Target({ElementType.FIELD, ElementType.METHOD})
+@Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CreatedTimestamp {
 

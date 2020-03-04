@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * Specify that the property is stored in encrypted form.
  */
-@Target({ElementType.FIELD, ElementType.METHOD})
+@Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Encrypted {
 

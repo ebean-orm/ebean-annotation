@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  * A database table or column comment.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.FIELD, ElementType.METHOD, ElementType.TYPE})
+@Target({ElementType.FIELD, ElementType.TYPE})
 public @interface DbComment {
 
   /**

@@ -35,7 +35,7 @@ import java.lang.annotation.Target;
  * property or when there is a join to that OneToMany property.
  * </p>
  */
-@Target({ElementType.FIELD, ElementType.METHOD, ElementType.TYPE})
+@Target({ElementType.FIELD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Repeatable(Where.List.class)
 public @interface Where {
@@ -57,7 +57,7 @@ public @interface Where {
   /**
    * Repeatable support for {@link Where}.
    */
-  @Target({ ElementType.FIELD, ElementType.METHOD, ElementType.TYPE })
+  @Target({ ElementType.FIELD, ElementType.TYPE })
   @Retention(RetentionPolicy.RUNTIME)
   @interface List {
 
