@@ -6,6 +6,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * Deprecated migrate to <code>@WhenCreated</code>.
+ *
  * For a timestamp property that is set to the datetime when the entity is
  * created/inserted.
  * <p>
@@ -31,6 +33,7 @@ import java.lang.annotation.Target;
  *
  * }</pre>
  */
+@Deprecated
 @Target({ElementType.FIELD, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CreatedTimestamp {

@@ -6,6 +6,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * Deprecated migrate to <code>@WhenModified</code>.
+ * <p>
  * For a timestamp property that is set to the datetime when the entity was last
  * updated.
  * <p>
@@ -13,6 +15,7 @@ import java.lang.annotation.Target;
  * towards a better naming convention (WhenCreated, WhenModified).
  * </p>
  */
+@Deprecated
 @Target({ElementType.FIELD, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface UpdatedTimestamp {
