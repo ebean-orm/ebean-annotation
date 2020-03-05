@@ -22,7 +22,7 @@ import static java.lang.annotation.ElementType.TYPE;
  *
  * }</pre>
  */
-@Target({TYPE, ANNOTATION_TYPE})
+@Target({TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface StorageEngine {
 
