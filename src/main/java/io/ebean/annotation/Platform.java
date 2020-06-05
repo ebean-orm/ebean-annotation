@@ -56,6 +56,11 @@ public enum Platform {
   MYSQL55(MYSQL),
 
   /**
+   * MariaDB.
+   */
+  MARIADB,
+
+  /**
    * NuoDB.
    */
   NUODB,
