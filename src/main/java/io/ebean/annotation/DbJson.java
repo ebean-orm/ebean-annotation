@@ -33,12 +33,17 @@ import java.lang.annotation.Target;
 public @interface DbJson {
 
   /**
-   * Specify the database type used to store the JSON content.
+   * The name of the column (Optional).
    */
-  DbJsonType storage() default DbJsonType.JSON;
+  String name() default "";
 
   /**
    * For VARCHAR storage specify the column length (defaults to 3000).
    */
   int length() default 0;
+
+  /**
+   * Specify the database type used to store the JSON content.
+   */
+  DbJsonType storage() default DbJsonType.JSON;
 }

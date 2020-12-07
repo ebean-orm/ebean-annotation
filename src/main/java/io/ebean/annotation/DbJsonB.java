@@ -37,6 +37,11 @@ import java.lang.annotation.Target;
 public @interface DbJsonB {
 
   /**
+   * The name of the column (Optional).
+   */
+  String name() default "";
+
+  /**
    * For VARCHAR storage specify the column length.
    */
   int length() default 0;

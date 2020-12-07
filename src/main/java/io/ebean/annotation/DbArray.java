@@ -34,6 +34,11 @@ import java.lang.annotation.Target;
 public @interface DbArray {
 
   /**
+   * The name of the column (Optional).
+   */
+  String name() default "";
+
+  /**
    * For VARCHAR storage specify the column length (defaults to 1000).
    */
   int length() default 0;

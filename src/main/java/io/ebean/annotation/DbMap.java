@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
  * <h3>Example:</h3>
  * <pre>{@code
  *
- *   @DbHstore
+ *   @DbMap
  *   Map<String, String> tags;
  *
  * }</pre>
@@ -22,6 +22,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface DbMap {
+
+  /**
+   * The name of the column (Optional).
+   */
+  String name() default "";
 
   /**
    * For VARCHAR storage specify the column length (defaults to 1000).
