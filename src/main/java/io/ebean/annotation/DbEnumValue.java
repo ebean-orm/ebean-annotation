@@ -51,4 +51,9 @@ public @interface DbEnumValue {
    */
   int length() default 0;
 
+  /**
+   * When true DDL should generate a database constraint for the enum values.
+   */
+  boolean withConstraint() default true;
+
 }
