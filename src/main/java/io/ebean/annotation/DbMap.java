@@ -6,11 +6,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Used for mapping a Map<String,String> type property to Postgres HSTORE data type.
+ * Used for mapping a {@code Map<String,String>} type property to Postgres HSTORE data type.
  * <p>
  * The Map property should have keys and values of type String.
- * </p>
- * <p>
+ *
  * <h3>Example:</h3>
  * <pre>{@code
  *

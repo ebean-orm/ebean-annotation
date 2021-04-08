@@ -7,20 +7,21 @@ import java.lang.annotation.Target;
 
 /**
  * Specify the property is included in the parent document store index.
+ *
+ * <h3>Example</h3>
  * <pre>{@code
  *
+ *   @DocStore
+ *   @Entity
+ *   @Table(name = "o_order")
+ *   public class Order {
  *
- * @DocStore
- * @Entity @Table(name = "o_order")
- * public class Order {
+ *     ...
+ *     @DocEmbedded(doc = "id,status,name,billingAddress(*,country(*)")
+ *     @ManyToOne
+ *     Customer customer;
  *
- *   ...
- *   // include some customer details including
- *   // nested billingAddress
- *   @DocEmbedded(doc = "id,status,name,billingAddress(*,country(*)")
- *   @ManyToOne
- *   Customer customer;
- *
+ *   }
  *
  * }</pre>
  */

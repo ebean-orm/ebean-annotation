@@ -76,20 +76,18 @@ public @interface DocStore {
    * Specify to include only some properties in the doc store document.
    * <p>
    * If this is left as default then all scalar properties are included,
-   * all @ManyToOne properties are included with just the nested id property
-   * and no @OneToMany properties are included.
-   * </p>
+   * all ManyToOne properties are included with just the nested id property
+   * and no OneToMany properties are included.
    * <p>
-   * Note that typically DocStoreEmbedded is used on @ManyToOne and @OneToMany
+   * Note that typically DocStoreEmbedded is used on ManyToOne and OneToMany
    * properties to indicate what part of the nested document should be included.
-   * </p>
+   *
    * <h3>Example:</h3>
    * <pre>{@code
    *
-   * // only include the customer id and name
-   * @DocStore(doc = "id,name")
-   * @Entity @Table(name = "o_order")
-   * public class Customer {
+   *    @DocStore(doc = "id,name")
+   *    @Entity
+   *    public class Customer
    *
    * }</pre>
    */
