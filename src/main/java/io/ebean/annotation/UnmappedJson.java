@@ -19,7 +19,7 @@ import java.lang.annotation.Target;
  * <pre>{@code
  *
  * @UnmappedJson
- * Map<String,Object> unmapped;
+ * Map<String, Object> unmapped;
  *
  * }</pre>
  */

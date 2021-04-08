@@ -106,7 +106,7 @@ public @interface Formula {
   /**
    * Repeatable support for {@link Formula}.
    */
-  @Target({ ElementType.FIELD, ElementType.TYPE })
+  @Target({ElementType.FIELD, ElementType.TYPE})
   @Retention(RetentionPolicy.RUNTIME)
   @interface List {
 

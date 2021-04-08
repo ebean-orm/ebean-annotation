@@ -12,24 +12,24 @@ package io.ebean.annotation;
  */
 public enum ConstraintMode {
 
-	/**
-	 * Restrict - The usual default behavior for foreign constraints (also known as 'No Action').
-	 */
-	RESTRICT,
+  /**
+   * Restrict - The usual default behavior for foreign constraints (also known as 'No Action').
+   */
+  RESTRICT,
 
-	/**
-	 * Set the value to null when a referenced id is deleted.
-	 */
-	SET_NULL,
+  /**
+   * Set the value to null when a referenced id is deleted.
+   */
+  SET_NULL,
 
-	/**
-	 * Set the value to 'default' when a referenced id is deleted.
-	 */
-	SET_DEFAULT,
+  /**
+   * Set the value to 'default' when a referenced id is deleted.
+   */
+  SET_DEFAULT,
 
-	/**
-	 * Cascade - To automatically cascade a delete of a referenced id.
-	 */
-	CASCADE
+  /**
+   * Cascade - To automatically cascade a delete of a referenced id.
+   */
+  CASCADE
 
 }

@@ -52,14 +52,13 @@ import java.lang.annotation.Target;
  *      .findList();
  *
  * }</pre>
- *
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD})
 public @interface FetchPreference {
 
-	/**
-	 * The fetch preference used - low value means higher preference.
-	 */
-	int value();
+  /**
+   * The fetch preference used - low value means higher preference.
+   */
+  int value();
 }

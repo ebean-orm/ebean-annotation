@@ -16,7 +16,6 @@ package io.ebean.annotation;
  *   transaction.setBatchMode(true);
  *
  * }</pre>
- *
  */
 public enum PersistBatch {
 

@@ -19,7 +19,7 @@ import java.lang.annotation.Target;
  *
  * // Store as JSONB on Postgres or Clob on other databases
  * @DbJsonB
- * Map<String,Object> content;
+ * Map<String, Object> content;
  *
  * }</pre>
  * <p>

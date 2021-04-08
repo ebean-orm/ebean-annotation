@@ -57,7 +57,7 @@ public @interface Where {
   /**
    * Repeatable support for {@link Where}.
    */
-  @Target({ ElementType.FIELD, ElementType.TYPE })
+  @Target({ElementType.FIELD, ElementType.TYPE})
   @Retention(RetentionPolicy.RUNTIME)
   @interface List {
 

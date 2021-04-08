@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * Deprecated migrate to <code>@WhenCreated</code>.
- *
+ * <p>
  * For a timestamp property that is set to the datetime when the entity is
  * created/inserted.
  * <p>

@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
  *
  * // Store as JSON on Postgres or Clob on other databases
  * @DbJson
- * Map<String,Object> content;
+ * Map<String, Object> content;
  *
  * }</pre>
  * <p>

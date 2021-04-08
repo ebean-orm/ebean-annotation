@@ -44,32 +44,32 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 public @interface DbForeignKey {
 
-	/**
-	 * Specify the onDelete mode. Typically will default to RESTRICT (aka No Action).
-	 */
-	ConstraintMode onDelete() default ConstraintMode.RESTRICT;
+  /**
+   * Specify the onDelete mode. Typically will default to RESTRICT (aka No Action).
+   */
+  ConstraintMode onDelete() default ConstraintMode.RESTRICT;
 
-	/**
-	 * Do NOT change this - seriously, don't do it.
-	 * <p>
-	 * Your primary keys should never change by design. We should orientate the design to
-	 * support primary keys that change (and instead find better non mutating primary keys).
-	 * Oracle go to the point of actively not supporting "on update" for this reason.
-	 * </p>
-	 * <p>
-	 * So yes, we can specify the onUpdate mode but I don't expect anyone to change this.
-	 * </p>
-	 */
-	ConstraintMode onUpdate() default ConstraintMode.RESTRICT;
+  /**
+   * Do NOT change this - seriously, don't do it.
+   * <p>
+   * Your primary keys should never change by design. We should orientate the design to
+   * support primary keys that change (and instead find better non mutating primary keys).
+   * Oracle go to the point of actively not supporting "on update" for this reason.
+   * </p>
+   * <p>
+   * So yes, we can specify the onUpdate mode but I don't expect anyone to change this.
+   * </p>
+   */
+  ConstraintMode onUpdate() default ConstraintMode.RESTRICT;
 
-	/**
-	 * Set to true when we do not wish any foreign key constraint to be created.
-	 * When this is set to true the onDelete and onUpdate have no effect.
-	 */
-	boolean noConstraint() default false;
+  /**
+   * Set to true when we do not wish any foreign key constraint to be created.
+   * When this is set to true the onDelete and onUpdate have no effect.
+   */
+  boolean noConstraint() default false;
 
-	/**
-	 * Set to true when we do not wish an index to be created on the foreign key column(s).
-	 */
-	boolean noIndex() default false;
+  /**
+   * Set to true when we do not wish an index to be created on the foreign key column(s).
+   */
+  boolean noIndex() default false;
 }
