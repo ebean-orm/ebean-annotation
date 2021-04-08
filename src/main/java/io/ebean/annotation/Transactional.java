@@ -64,6 +64,14 @@ public @interface Transactional {
   TxType type() default TxType.REQUIRED;
 
   /**
+   * Experimental option to automatically persist mutated entity beans.
+   * <p>
+   * That is, beans that are fetched and mutated are automatically persisted
+   * without requiring explicit call to update().
+   */
+  TxOption autoPersistUpdates() default TxOption.DEFAULT;
+
+  /**
    * Persist batch mode for the transaction.
    */
   PersistBatch batch() default PersistBatch.INHERIT;
