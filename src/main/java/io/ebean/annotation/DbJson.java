@@ -38,17 +38,12 @@ public @interface DbJson {
   String name() default "";
 
   /**
-   * Set to false to disable dirty detection based on hash of json content.
-   */
-  boolean dirtyDetection() default true;
-
-  /**
-   * Set to true to keep the json content to support oldValues and dirty detection.
+   * The mutation detection mode to use.
    * <p>
-   * With this on the 'oldValue' can be built from the stored original json content.
-   * This can then be used in change logs and persist listeners.
+   * This is used to handle if and how it is detected that the json property
+   * has been mutated and hence should be included in an update.
    */
-  boolean keepSource() default false;
+  MutationDetection mutationDetection() default MutationDetection.DEFAULT;
 
   /**
    * For VARCHAR storage specify the column length (defaults to 3000).
