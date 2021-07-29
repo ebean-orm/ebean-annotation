@@ -38,6 +38,19 @@ public @interface DbJson {
   String name() default "";
 
   /**
+   * Set to false to disable dirty detection based on hash of json content.
+   */
+  boolean dirtyDetection() default true;
+
+  /**
+   * Set to true to keep the json content to support oldValues and dirty detection.
+   * <p>
+   * With this on the 'oldValue' can be built from the stored original json content.
+   * This can then be used in change logs and persist listeners.
+   */
+  boolean keepSource() default false;
+
+  /**
    * For VARCHAR storage specify the column length (defaults to 3000).
    */
   int length() default 0;
