@@ -16,6 +16,11 @@ public enum Platform {
   DB2,
 
   /**
+   * Db 2 for iSeries.
+   */
+  DB2FORI,
+
+  /**
    * CockroachDB.
    */
   COCKROACH,
@@ -117,6 +122,8 @@ public enum Platform {
 
   /**
    * Return the base platform.
+   *
+   * @return the platform
    */
   public Platform base() {
     return base;
