@@ -16,9 +16,19 @@ public enum Platform {
   DB2,
 
   /**
-   * Db 2 for iSeries.
+   * Db2 for iSeries.
    */
-  DB2FORI,
+  DB2FORI(DB2),
+
+  /**
+   * Db2 for Linux/Unix/Windows.
+   */
+  DB2LUW(DB2),
+
+  /**
+   * DB2 for z/OS.
+   */
+  DB2ZOS(DB2),
 
   /**
    * CockroachDB.
