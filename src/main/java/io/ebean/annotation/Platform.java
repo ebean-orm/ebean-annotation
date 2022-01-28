@@ -118,7 +118,12 @@ public enum Platform {
   /**
    * SAP HANA
    */
-  HANA;
+  HANA,
+
+  /**
+   * Yugabyte DB.
+   */
+  YUGABYTE;
 
   private Platform base;
 
