@@ -21,12 +21,12 @@ public @interface Tablespace {
   String value();
   
   /**
-   * Tablespace for indices.
+   * Tablespace for indices. Default: use the same as for "tables"
    */
   String index() default "";
   
   /**
-   * Tablespace for lob fields.
+   * Tablespace for lob fields. Default: use the same as for "tables"
    */
   String lob() default "";
 
