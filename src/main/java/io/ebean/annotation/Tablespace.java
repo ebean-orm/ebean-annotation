@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
  */
 @Target({ElementType.TYPE, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface DbTablespace {
+public @interface Tablespace {
 
   /**
    * Tablespace for tables.
@@ -23,12 +23,12 @@ public @interface DbTablespace {
   /**
    * Tablespace for indices.
    */
-  String index() default "$DEFAULT";
+  String index() default "";
   
   /**
    * Tablespace for lob fields.
    */
-  String lob() default "$DEFAULT";
+  String lob() default "";
 
 }
 
