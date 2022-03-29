@@ -11,6 +11,11 @@ public enum Platform {
   GENERIC,
 
   /**
+   * Custom platform provided externally.
+   */
+  CUSTOM,
+
+  /**
    * DB2.
    */
   DB2,
@@ -81,7 +86,7 @@ public enum Platform {
   NUODB,
 
   /**
-   * Oracle preferred platform 12c and higher.
+   * Oracle preferred platform 18c and higher.
    */
   ORACLE,
 
@@ -89,6 +94,11 @@ public enum Platform {
    * Oracle 11 platform.
    */
   ORACLE11(ORACLE),
+
+  /**
+   * Oracle 12 platform.
+   */
+  ORACLE12(ORACLE),
 
   /**
    * SQLAnywhere.
