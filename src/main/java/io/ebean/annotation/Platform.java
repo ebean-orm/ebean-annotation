@@ -135,7 +135,7 @@ public enum Platform {
    */
   YUGABYTE;
 
-  private Platform base;
+  private final Platform base;
 
   Platform() {
     this.base = this;
