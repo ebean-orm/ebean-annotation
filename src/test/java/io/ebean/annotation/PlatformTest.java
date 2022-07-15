@@ -1,15 +1,13 @@
 package io.ebean.annotation;
 
-
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PlatformTest {
+class PlatformTest {
 
   @Test
   void base() {
-
     assertThat(Platform.POSTGRES.base()).isSameAs(Platform.POSTGRES);
     assertThat(Platform.POSTGRES9.base()).isSameAs(Platform.POSTGRES);
 
