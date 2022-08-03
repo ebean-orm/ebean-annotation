@@ -44,7 +44,7 @@ import java.lang.annotation.Target;
  * <h3>Example: Allow inconsistency:</h3>
  * <pre>{@code
  * // disable foreign keys and force ebean to use left joins
- * @DbForeignKey(noConstraint=true, assumeConsistency=false)
+ * @DbForeignKey(noConstraint=true, forceLeftJoin=true)
  * // the reference column in the database will be NOT NULL
  * @ManyToOne(optional=false)
  * RelatedBean parent;
@@ -54,7 +54,7 @@ import java.lang.annotation.Target;
  * a non existent (or not yet existent) reference bean with a particular ID and create.
  * that bean in a later step.
  * <p>
- * As 'assumeConsistency=false' Ebean will now use LEFT JOINs instead  of INNER JOINS,
+ * Ebean will also be enforced to use LEFT JOINs instead of INNER JOINS,
  * so that the query result wouldn't skip entries if a non-existent relation is involved.
  * <br>
  * Note: In this case, the 'parent' may not be <code>null</code>, but you'll
@@ -93,14 +93,13 @@ public @interface DbForeignKey {
   boolean noConstraint() default false;
 
   /**
-   * Should ebean assume, that the data is consistent (default) or not.
-   * If this is set to false, LEFT JOIN is always used in queries, because
-   * we cannot guarantee, that we have a matching join partner.
+   * If this is set to true, LEFT JOIN is always used in queries, because
+   * data may be inconsistent and we cannot rely to have matching join partners.
    * <p>
    * Note: This setting controls only sql-generation (left join vs. join).
    * You may need <code>noConstraint = true</code> in most cases.
    */
-  boolean assumeConsistency() default true;
+  boolean forceLeftJoin() default false;
 
   /**
    * Set to true when we do not wish an index to be created on the foreign key column(s).
