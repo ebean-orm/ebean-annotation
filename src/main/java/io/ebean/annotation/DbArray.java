@@ -42,4 +42,9 @@ public @interface DbArray {
    * For VARCHAR storage specify the column length (defaults to 1000).
    */
   int length() default 0;
+
+  /**
+   * Nullable by default.
+   */
+  boolean nullable() default true;
 }
