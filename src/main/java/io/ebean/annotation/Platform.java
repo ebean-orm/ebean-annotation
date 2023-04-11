@@ -31,6 +31,11 @@ public enum Platform {
   DB2LUW(DB2),
 
   /**
+   * Db2 for Linux/Unix/Windows version 9.x.
+   */
+  DB2LUW9(DB2),
+
+  /**
    * DB2 for z/OS.
    */
   DB2ZOS(DB2),
@@ -99,6 +104,16 @@ public enum Platform {
    * Oracle 12 platform.
    */
   ORACLE12(ORACLE),
+
+  /**
+   * Oracle 18 platform.
+   */
+  ORACLE18(ORACLE),
+
+  /**
+   * Oracle 21 platform.
+   */
+  ORACLE21(ORACLE),
 
   /**
    * SQLAnywhere.
