@@ -4,12 +4,13 @@
 
   <groupId>io.ebean</groupId>
   <artifactId>ebean-annotation</artifactId>
-  <version>8.5-SNAPSHOT</version>
+  <name>ebean-annotation</name>
+  <version>8.5</version>
 
   <parent>
     <groupId>org.avaje</groupId>
     <artifactId>java11-oss</artifactId>
-    <version>3.9</version>
+    <version>5.2</version>
   </parent>
 
   <scm>
