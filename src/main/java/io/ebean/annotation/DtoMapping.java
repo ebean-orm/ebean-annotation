@@ -127,6 +127,55 @@ public @interface DtoMapping {
   }
 
   /**
+   * Controls whether the generated mapper constructs the target DTO via a detected setter-based
+   * (mutable JavaBean) construction path - a public no-arg constructor plus a
+   * {@code setXxx(propertyType)} setter for every mapped property, the shape JAXB/XSD-generated
+   * legacy SOAP types commonly follow - rather than a positional constructor call or a builder
+   * chain. A matching setter may either return {@code void} or return the target type itself
+   * (fluent-style, e.g. {@code public Target setXxx(...) { ...; return this; }}) - either way the
+   * generated code calls it as a plain statement and ignores any return value.
+   */
+  Setter setter() default Setter.AUTO;
+
+  /**
+   * Target construction strategy - see {@link #setter()}.
+   */
+  enum Setter {
+    /**
+     * Use a detected setter-based construction path only when no builder was selected (see
+     * {@link Builder}) and the target has no positional constructor matching the mapped
+     * properties, falling back silently to a positional constructor call otherwise.
+     */
+    AUTO,
+    /**
+     * Always use setter-based construction - a codegen-time error if the target has no usable
+     * no-arg-constructor-plus-setters shape.
+     * <p>
+     * Use this to pin a target to setter-based construction rather than relying on {@code AUTO}'s
+     * shape-based fallback - e.g. a legacy JAXB/mutable-JavaBean target that happens to also
+     * expose a same-arity constructor {@code AUTO} would otherwise silently prefer instead (its
+     * parameter order may be coincidental, not actually intended for this mapping); or simply to
+     * document the intended strategy explicitly for readers. Also gives a clear
+     * {@code @DtoMapping} error - naming the missing setter - if a setter is later renamed or
+     * removed, rather than {@code AUTO} silently falling through to a positional constructor call
+     * that may not compile, or may compile but populate the wrong properties.
+     */
+    ALWAYS,
+    /**
+     * Never use setter-based construction, even if the target has a usable shape - always use a
+     * positional constructor instead (a codegen-time error if no matching one exists).
+     * <p>
+     * Use this to pin a target to positional-constructor construction rather than relying on
+     * {@code AUTO}'s shape-based fallback - e.g. a target that happens to expose both a matching
+     * positional constructor and a full set of setters (so {@code AUTO} would already prefer the
+     * constructor anyway, but {@code NEVER} makes that guarantee explicit and future-proof:
+     * if the constructor is later removed/changed, the mapping fails to compile immediately
+     * instead of silently switching to a setter chain no one asked for).
+     */
+    NEVER
+  }
+
+  /**
    * Container annotation allowing {@code @DtoMapping} to be repeated on the same element.
    */
   @Target({ElementType.PACKAGE, ElementType.MODULE})
