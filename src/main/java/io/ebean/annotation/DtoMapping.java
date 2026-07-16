@@ -54,6 +54,18 @@ public @interface DtoMapping {
   String mapperPackage() default "";
 
   /**
+   * Override the simple class name of the generated mapper.
+   * <p>
+   * Defaults to the target DTO's own simple name suffixed with {@code Mapper} (e.g. a mapping
+   * targeting {@code Fleet} generates {@code FleetMapper}). Set this when that default name would
+   * clash with an existing hand-written class of the same name (e.g. a legacy mapper still in use
+   * elsewhere that can't be renamed/removed yet) - the generated mapper can then be given a
+   * distinct name (and, if needed, paired with {@link #mapperPackage()} too) so both classes can
+   * coexist.
+   */
+  String mapperName() default "";
+
+  /**
    * Name this mapping as a named variant of an already-registered {@code (source, target)} pair,
    * rather than the primary/base mapping.
    * <p>
@@ -74,14 +86,15 @@ public @interface DtoMapping {
 
   /**
    * Nested {@code ToOne}/{@code ToMany} DTO property names (declared field names on the target,
-   * not source paths) to exclude from this named variant - only meaningful when {@link #name()}
-   * is non-empty. Excluded properties are omitted from this variant's {@code fetchGroup} (no
-   * fetch/join is issued for them) and mapped to {@code null} (ToOne) or an empty list (ToMany)
-   * in this variant's output, rather than being populated from the source graph.
+   * not source paths), or non-primitive scalar property names (e.g. a {@code @DtoConvert}-backed
+   * {@code List} property with no registered nested DTO mapping of its own), to exclude from this
+   * named variant - only meaningful when {@link #name()} is non-empty. Excluded properties are
+   * omitted from this variant's {@code fetchGroup} (no fetch/join/select is issued for them) and
+   * mapped to {@code null} (a single-valued property) or an empty list (a {@code List}-typed
+   * property) in this variant's output, rather than being populated from the source graph.
    * <p>
-   * Only nested {@code ToOne}/{@code ToMany} DTO properties can be excluded - plain scalar/
-   * {@code @DtoRef} properties cannot, since there's no type-safe "absent" value for an arbitrary
-   * scalar type.
+   * A primitive-typed scalar property cannot be excluded - there's no type-safe "absent" value
+   * for it.
    */
   String[] exclude() default {};
 
