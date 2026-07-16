@@ -5,7 +5,7 @@
   <groupId>io.ebean</groupId>
   <artifactId>ebean-annotation</artifactId>
   <name>ebean-annotation</name>
-  <version>8.9</version>
+  <version>8.10</version>
 
   <parent>
     <groupId>org.avaje</groupId>
