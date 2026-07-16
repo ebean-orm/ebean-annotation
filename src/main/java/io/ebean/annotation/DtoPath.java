@@ -26,6 +26,12 @@ import java.lang.annotation.Target;
  * This is purely a compile-time / codegen-time hint consumed when generating the DTO mapper and
  * deriving the query's fetch spec - the DTO itself remains a plain, framework-free type with no
  * runtime dependency on this annotation.
+ * <p>
+ * When the path traverses an intermediate relation that can be {@code null} (e.g. {@code
+ * billingAddress} above may itself be {@code null}) and the DTO field's type is a Java primitive
+ * (e.g. {@code long}, {@code int}, {@code boolean}), the generated mapper defaults the value to
+ * the primitive's zero-equivalent ({@code 0}/{@code false}/etc.) rather than throwing - set
+ * {@link #failOnNull()} to {@code true} to instead throw a clear exception when that happens.
  */
 @Target({ElementType.FIELD, ElementType.METHOD})
 @Retention(RetentionPolicy.CLASS)
@@ -35,4 +41,14 @@ public @interface DtoPath {
    * The source property path to map from, using dot-notation (e.g. {@code "billingAddress.line1"}).
    */
   String value();
+
+  /**
+   * For a primitive-typed DTO field whose path traverses a nullable intermediate relation, set to
+   * {@code true} to throw a clear exception when that relation is {@code null} at runtime, rather
+   * than the default of silently defaulting to the primitive's zero-equivalent value.
+   * <p>
+   * Has no effect for non-primitive (reference-typed) DTO fields - {@code null} is always a valid
+   * result for those regardless of this setting.
+   */
+  boolean failOnNull() default false;
 }
