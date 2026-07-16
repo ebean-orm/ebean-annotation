@@ -32,6 +32,17 @@ import java.lang.annotation.Target;
  * (e.g. {@code long}, {@code int}, {@code boolean}), the generated mapper defaults the value to
  * the primitive's zero-equivalent ({@code 0}/{@code false}/etc.) rather than throwing - set
  * {@link #failOnNull()} to {@code true} to instead throw a clear exception when that happens.
+ * <p>
+ * Every segment of the path must name a real, fetchable Ebean bean property (one with a backing
+ * field) - if a segment is instead a computed/derived getter (e.g. a hand-written method deriving
+ * a value from other properties, with no backing field of its own), its own data dependencies
+ * can't be inferred from the path alone, so {@link #requires()} must explicitly name the real
+ * entity paths that need to be fetched for it to execute safely without triggering a lazy load:
+ * <pre>{@code
+ * @DtoPath(value = "currentMachine.organisationMachine.registrationPlate",
+ *   requires = "currentMachine.organisationMachines")
+ * String machineLabel;   // getOrganisationMachine() derives its result from organisationMachines
+ * }</pre>
  */
 @Target({ElementType.FIELD, ElementType.METHOD})
 @Retention(RetentionPolicy.CLASS)
@@ -51,4 +62,12 @@ public @interface DtoPath {
    * result for those regardless of this setting.
    */
   boolean failOnNull() default false;
+
+  /**
+   * Real entity paths (dot-notation, same convention as {@link #value()}) that must be fetched to
+   * support a computed/derived getter segment within {@link #value()} - required whenever a
+   * segment of the path has no backing field, since its data dependencies can't otherwise be
+   * inferred. Ignored (and unnecessary) when every segment names a real, fetchable property.
+   */
+  String[] requires() default {};
 }
