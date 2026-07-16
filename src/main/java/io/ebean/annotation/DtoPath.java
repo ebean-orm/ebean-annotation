@@ -68,6 +68,11 @@ public @interface DtoPath {
    * support a computed/derived getter segment within {@link #value()} - required whenever a
    * segment of the path has no backing field, since its data dependencies can't otherwise be
    * inferred. Ignored (and unnecessary) when every segment names a real, fetchable property.
+   * <p>
+   * If the computed getter genuinely needs nothing extra fetched (e.g. it only touches properties
+   * already guaranteed to be selected), set {@code requires = {}} explicitly to confirm that - as
+   * opposed to omitting {@code requires} entirely, which is treated as "not yet considered" and
+   * fails the build with a clear compile error.
    */
   String[] requires() default {};
 }
